@@ -7,6 +7,12 @@
         integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
         integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+    <script src="australia.js" crossorigin=""></script>
+    <script src="canada.js" crossorigin=""></script>
+    <script src="india.js" crossorigin=""></script>
+    <script src="nigeria.js" crossorigin=""></script>
+    <script src="spain.js" crossorigin=""></script>
+    <script src="uk.js" crossorigin=""></script>
 </head>
 
 <body>
@@ -17,6 +23,21 @@
         L.tileLayer("https://api.maptiler.com/maps/winter/{z}/{x}/{y}.png?key=dqX9xw3VZr9NNQXAWZmB", {
             attribute: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         }).addTo(map);
+
+        L.geoJSON(uk, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(ukText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(canada, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(canText)
+            }
+        }).addTo(map);
+        L.geoJSON(spain).addTo(map);
+        L.geoJSON(nigeria).addTo(map);
+        L.geoJSON(australia).addTo(map);
 
     </script>
 
