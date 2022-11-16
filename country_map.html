@@ -8,11 +8,25 @@
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
         integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
     <script src="australia.js" crossorigin=""></script>
+    <script src="brazil.js" crossorigin=""></script>
     <script src="canada.js" crossorigin=""></script>
+    <script src="china.js" crossorigin=""></script>
+    <script src="chile.js" crossorigin=""></script>
+    <script src="egypt.js" crossorigin=""></script>
+    <script src="germany.js" crossorigin=""></script>
     <script src="india.js" crossorigin=""></script>
+    <script src="iran.js" crossorigin=""></script>
+    <script src="japan.js" crossorigin=""></script>
+    <script src="kenya.js" crossorigin=""></script>
+    <script src="nicaragua.js" crossorigin=""></script>
     <script src="nigeria.js" crossorigin=""></script>
+    <script src="russia.js" crossorigin=""></script>
+    <script src="samoa.js" crossorigin=""></script>
+    <script src="senegal.js" crossorigin=""></script>
+    <script src="singapore.js" crossorigin=""></script>
     <script src="spain.js" crossorigin=""></script>
     <script src="uk.js" crossorigin=""></script>
+    <script src="usa.js" crossorigin=""></script>
 </head>
 
 <body>
@@ -24,20 +38,113 @@
             attribute: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         }).addTo(map);
 
-        L.geoJSON(uk, {
-            onEachFeature: function (feature, layer) {
-                layer.bindPopup(ukText)
-            }
-        }).addTo(map);
 
         L.geoJSON(canada, {
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(canText)
             }
         }).addTo(map);
-        L.geoJSON(spain).addTo(map);
+
+        L.geoJSON(uk, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(ukText)
+            }
+        }).addTo(map);
+
         L.geoJSON(nigeria).addTo(map);
+        L.geoJSON(spain).addTo(map);
         L.geoJSON(australia).addTo(map);
+
+        L.geoJSON(iran, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(iranText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(senegal, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(senegalText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(japan, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(japanText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(egypt, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(egyptText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(germany, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(gerText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(china, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(chinaText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(chile, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(chileText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(kenya, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(kenyaText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(brazil, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(brazilText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(nicaragua, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(nicaraguaText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(samoa, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(samoaText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(usa, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(usaText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(singapore, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(singaporeText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(india).addTo(map);
+
+        L.geoJSON(nigeria).addTo(map);
+
+        L.geoJSON(russia, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(russiaText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(india).addTo(map);
+
 
     </script>
 
