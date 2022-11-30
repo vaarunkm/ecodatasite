@@ -2,16 +2,57 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <title> Heatmaps </title>
+    <style>
+        body {
+            font-family: "Sofia", sans-serif;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 style="text-align:center;"> Here are our heatmaps!</h1>
+    <h1 style="text-align:center;font-size:6vw"> Here are our heatmaps!</h1>
+    <img src="cities.png" alt="City heatmap"
+        style="width:70%;height:70%;margin-left:auto;margin-right:auto;display:block">
     <br>
-    <img src="https://github.com/emilyteh/ecodata_leaflet/cities.png" alt="City heatmap">
+    <img src="countries.png" alt="Country heatmap"
+        style="width:80%;height:65%;margin-left:auto;margin-right:auto;display:block">
     <br>
     <br>
-    <img src="/Users/emilyteh/Desktop/ecodata_map/countries.png" alt="Country heatmap">
+    <button class="button button1" onclick="location.href='country_map.html'">
+        Main Leaflet Map
+    </button>
+    <button class="button button1" onclick="location.href='main.html'">
+        Back to main page
+    </button>
+
 </body>
 
 </html>
