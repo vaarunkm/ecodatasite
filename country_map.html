@@ -38,7 +38,6 @@
             attribute: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         }).addTo(map);
 
-
         L.geoJSON(canada, {
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(canText)
@@ -51,9 +50,17 @@
             }
         }).addTo(map);
 
-        L.geoJSON(nigeria).addTo(map);
-        L.geoJSON(spain).addTo(map);
-        L.geoJSON(australia).addTo(map);
+        L.geoJSON(spain, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(spainText)
+            }
+        }).addTo(map);
+
+        L.geoJSON(australia, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(austText)
+            }
+        }).addTo(map);
 
         L.geoJSON(iran, {
             onEachFeature: function (feature, layer) {
@@ -133,19 +140,23 @@
             }
         }).addTo(map);
 
-        L.geoJSON(india).addTo(map);
+        L.geoJSON(india, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(indiaText)
+            }
+        }).addTo(map);
 
-        L.geoJSON(nigeria).addTo(map);
+        L.geoJSON(nigeria, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(nigeriaText)
+            }
+        }).addTo(map);
 
         L.geoJSON(russia, {
             onEachFeature: function (feature, layer) {
                 layer.bindPopup(russiaText)
             }
         }).addTo(map);
-
-        L.geoJSON(india).addTo(map);
-
-
     </script>
 
 </body>
