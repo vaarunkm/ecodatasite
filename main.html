@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Shade">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title> Sustainable Cities</title>
     <style>
         body {
@@ -13,8 +14,10 @@
 
         .description {
             font-family: "Times New Roman";
+            justify-content: center;
             align-items: center;
             text-align: center;
+            margin-inline: 25vw;
         }
 
         .button {
@@ -42,6 +45,22 @@
             background-color: #4CAF50;
             color: white;
         }
+
+        .button-container{
+            display:flex;
+            justify-content: center;
+        }
+
+        .team-container{
+            justify-content: center;
+            text-align: center;
+            position: static;
+        }
+
+        .team-list{
+            text-align: left;
+            margin-inline: 25vw;
+        }
     </style>
 </head>
 
@@ -55,20 +74,33 @@
             mitigate the effects as much as possible. </p>
     </div>
     <p style="text-align:center;"> Pick an option below for what you would like to explore!</p>
-
-    <button class="button button1" onclick="location.href='country_map.html'">
-        Main Leaflet Map
-    </button>
+    
+    <div style="text-align:center;" class="button-container">
+        <button class="button button1" onclick="location.href='country_map.html'">
+            Main Leaflet Map
+        </button>
+        <br>
+        <button class="button button1" onclick="location.href='heatmaps.html'">
+            Heatmaps
+        </button>
+    </div>
     <br>
-    <button class="button button1" onclick="location.href='heatmaps.html'">
-        Heatmaps
-    </button>
-    <br>
-    <div>
+    <div class="team-container">
         <h3> Meet the team!</h3>
         <img src="team.png" alt="team pic" style="width:50%;height:50%;">
-        <p> Our team members: </p>
-        <li> </li>
+        <div class="team-list">
+            <p> Our team members: </p>
+            <li>Emily Xin-Yi Teh</li>
+            <li>Jacqueline Buford</li>
+            <li>Jett Li</li>
+            <li>John Micallef</li>
+            <li>Kate Conkright</li>
+            <li>Maitri Shah</li>
+            <li>Noah Young</li>
+            <li>Sanjana Jain</li>
+            <li>Vaarun Muthappan</li>
+            <li>Zainab Taher</li>
+        </div>
     </div>
 
 </body>
