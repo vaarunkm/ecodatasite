@@ -11,6 +11,12 @@
             justify-content: center;
         }
 
+        .description {
+            font-family: "Times New Roman";
+            align-items: center;
+            text-align: center;
+        }
+
         .button {
             border: none;
             color: white;
@@ -28,6 +34,8 @@
             background-color: white;
             color: black;
             border: 2px solid #4CAF50;
+            align-items: center;
+            text-align: center;
         }
 
         .button1:hover {
@@ -38,9 +46,15 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;"> Hello! Welcome to the Sustainable Cities Website! <br>(Eco Data F22)</h1>
+    <h1 style="text-align:center;">Welcome to the Sustainable Cities Website! <br>(Eco Data F22)</h1>
     <br>
-    <h2> Pick an option below for what you would like to explore!</h2>
+    <div>
+        <p class="description"> Hello! We are a group of students from the University of Michigan who created
+            this website to share sustainability goals and statistics for cities and countries around the world. Our
+            goal is to help people understand where various places stand on combatting climate change and how we can
+            mitigate the effects as much as possible. </p>
+    </div>
+    <p style="text-align:center;"> Pick an option below for what you would like to explore!</p>
 
     <button class="button button1" onclick="location.href='country_map.html'">
         Main Leaflet Map
@@ -49,7 +63,14 @@
     <button class="button button1" onclick="location.href='heatmaps.html'">
         Heatmaps
     </button>
-    <img src="team.png" alt="team pic" style="width:50%;height:50%">
+    <br>
+    <div>
+        <h3> Meet the team!</h3>
+        <img src="team.png" alt="team pic" style="width:50%;height:50%;">
+        <p> Our team members: </p>
+        <li> </li>
+    </div>
+
 </body>
 
 </html>
