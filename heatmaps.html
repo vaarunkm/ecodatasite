@@ -2,11 +2,12 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Shade">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <title> Heatmaps </title>
     <style>
         body {
-            font-family: "Rubik Microbe", sans-serif;
+            font-family: "Bungee Shade", sans-serif;
             align-items: center;
             justify-content: center;
         }
@@ -28,25 +29,34 @@
             background-color: white;
             color: black;
             border: 2px solid #4CAF50;
+            font-family: "Josefin Sans", sans-serif;
         }
 
         .button1:hover {
             background-color: #4CAF50;
             color: white;
         }
+
+        .description {
+            text-align: center;
+            font-family: "Josefin Sans", sans-serif;
+            margin-inline: 15vw;
+        }
     </style>
 </head>
 
 <body>
-    <h1 style="text-align:center;font-size:5.5vw"> Here are our heatmaps!</h1>
+    <h1 style="text-align:center;"> Heatmaps</h1>
     <div>
-        <p class="center" style="margin-left:auto;margin-right:auto;font-size:1vw">Here's a quick guide on how to
-            interpret each heatmap! The bar to the right shows how the colors relate on a scale from 0 to 1.
+        <h3 class="description">Here's a quick guide on how to
+            interpret each heatmap! 
+        </h3>
+        <h3 class="description">The bar to the right shows how the colors relate on a scale from 0 to 1.
             Since we have normalized all our data for each metric, there is no specific unit associated with each color.
             Instead, the colors show how each city or country
             relates to another for a particular metric. Lighter (closer to 1) or darker colors (closer to 0) signify
             different
-        </p>
+        </h3>
     </div>
     <img src="cities2.png" alt="City heatmap"
         style="width:55%;height:55%;margin-left:auto;margin-right:auto;display:block">

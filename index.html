@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Shade">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title> Sustainable Cities</title>
     <style>
@@ -13,11 +14,11 @@
         }
 
         .description {
-            font-family: "Times New Roman";
+            font-family: "Josefin Sans", sans-serif;
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-inline: 25vw;
+            margin-inline: 20vw;
         }
 
         .button {
@@ -39,6 +40,7 @@
             border: 2px solid #4CAF50;
             align-items: center;
             text-align: center;
+            font-family: "Josefin Sans", sans-serif;
         }
 
         .button1:hover {
@@ -46,36 +48,38 @@
             color: white;
         }
 
-        .button-container{
-            display:flex;
+        .button-container {
+            display: flex;
             justify-content: center;
         }
 
-        .team-container{
+        .team-container {
             justify-content: center;
             text-align: center;
             position: static;
         }
 
-        .team-list{
-            text-align: left;
+        .team-list {
+            text-align: center;
             margin-inline: 25vw;
-            font-family: "Times New Roman";
+            font-family: "Josefin Sans", sans-serif;
         }
     </style>
 </head>
 
 <body>
-    <h1 style="text-align:center;">Welcome to the Sustainable Cities Website! <br>(Eco Data F22)</h1>
+    <h1 style="text-align:center;">Welcome to the Sustainable Cities Website!</h1>
     <br>
     <div>
-        <p class="description"> Hello! We are a group of students from the University of Michigan who created
+        <h3 class="description"> Hello! We are a group of students from the University of Michigan EcoData team who
+            created
             this website to share sustainability goals and statistics for cities and countries around the world. Our
             goal is to help people understand where various places stand on combatting climate change and how we can
-            mitigate the effects as much as possible. </p>
+            mitigate the effects as much as possible. </h3>
     </div>
-    <p style="text-align:center;"> Pick an option below for what you would like to explore!</p>
-    
+    <br>
+    <h3 class="description"> Pick an option below for what you would like to explore!</h3>
+
     <div style="text-align:center;" class="button-container">
         <button class="button button1" onclick="location.href='country_map.html'">
             World Map
@@ -87,21 +91,15 @@
     </div>
     <br>
     <!-- python -m SimpleHTTPServer-->
+    <br>
     <div class="team-container">
-        <h3> Meet the team!</h3>
-        <img src="team.png" alt="team pic" style="width:50%;height:50%;">
+        <h2> Meet the team!</h2>
+        <img src="team.png" alt="team pic" style="width:45%;height:45%;">
         <div class="team-list">
-            <p> Team Leads: </p>
-            <li>Emily Teh</li>
-            <li>Jacqueline Buford</li>
-            <p> Team Members:</p>
-            <li>Jett Li</li>
-            <li>John Micallef</li>
-            <li>Kate Conkright</li>
-            <li>Maitri Shah</li>
-            <li>Noah Young</li>
-            <li>Vaarun Muthappan</li>
-            <li>Zainab Taher</li>
+            <p> Team Leads: Jacqueline Buford, Emily Teh</p>
+        </div>
+        <div class="team-list">
+            <p> Team Members: Jett Li, John Micallef, Kate Conkright, Maitri Shah, Noah Young, Vaarun Muthappan</p>
         </div>
     </div>
 
