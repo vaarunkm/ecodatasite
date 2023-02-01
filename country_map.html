@@ -196,6 +196,10 @@
                 layer.bindPopup(russiaText)
             }
         }).addTo(map);
+        
+        geoJsonLayer.eachLayer(function (layer) {
+            layer._path.id = 'feature-' + layer.feature.properties.id;
+        });
     </script>
 
     <button class="button button1" onclick="location.href='heatmaps.html'">
