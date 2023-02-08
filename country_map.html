@@ -193,7 +193,7 @@
 
         L.geoJSON(russia, {
             onEachFeature: function (feature, layer) {
-                layer.bindPopup(russiaText)
+                layer.bindPopup(russiaText+"id is:"+feature.properties.id)
             }
         }).addTo(map);
         
