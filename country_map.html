@@ -79,7 +79,9 @@
 
         L.geoJSON(canada, {
             onEachFeature: function (feature, layer) {
-                layer.bindPopup(canText)
+                // layer.bindPopup(canText)
+                layer.markerID = feature.properties.id;
+                layer.bindPopup("<strong>ID:</strong> " + feature.properties.id + "<br>" + "<strong>Name:</strong> " + feature.properties.firstname + " " + feature.properties.lastname);
             }
         }).addTo(map);
 
@@ -193,21 +195,22 @@
 
         L.geoJSON(russia, {
             onEachFeature: function (feature, layer) {
-                layer.bindPopup(russiaText+"id is:"+feature.properties.id)
+                feature.properties.id = "russiaID";
+                layer.bindPopup(russiaText+"id is:"+feature.properties.id);
             }
         }).addTo(map);
         
-        geoJsonLayer.eachLayer(function (layer) {
-            layer._path.id = 'feature-' + layer.feature.properties.id;
-        });
+//         geoJsonLayer.eachLayer(function (layer) {
+//             layer._path.id = 'feature-' + layer.feature.properties.id;
+//         });
         
-        function onEachFeature(feature, layer) {
-            layer.on('click', function (e) {
-                alert(feature.properties.popupContent);
-                //or
-                alert(feature.properties.id);
-            });
-        }
+//         function onEachFeature(feature, layer) {
+//             layer.on('click', function (e) {
+//                 alert(feature.properties.popupContent);
+//                 //or
+//                 alert(feature.properties.id);
+//             });
+//         }
         
         let url = "https://api.sealevelsensors.org/v1.0/Things(3)";
         // Declare a boolean flag that we can use to cancel the API request.
@@ -231,6 +234,8 @@
             })
             .catch((error) => console.log(error));
     </script>
+    
+    <p id = "id1"><p>
 
     <button class="button button1" onclick="location.href='heatmaps.html'">
         Heatmaps
