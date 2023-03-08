@@ -76,10 +76,25 @@
         L.tileLayer("https://api.maptiler.com/maps/winter/{z}/{x}/{y}.png?key=dqX9xw3VZr9NNQXAWZmB", {
             attribute: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         }).addTo(map);
+        
+        var url = 'https://api.sealevelsensors.org/v1.0/Things(3)';
+        var j = [];
+        $.ajax({
+          type: 'GET',
+          url: url,
+          dataType: 'json',
+          success: function(data) { j = data;},
+          async: false
+        });
 
         L.geoJSON(canada, {
             onEachFeature: function (feature, layer) {
-                layer.bindPopup('<p id = "canID"> canText </p>')
+                newid = feature.properties.id
+                if (newid == undefined){
+                    feature.properties.id = "canId";
+                    canText = canText + j.description;
+                }
+                layer.bindPopup(canText)
                 // layer.markerID = feature.properties.id;
                 // layer.bindPopup("<strong>ID:</strong> " + feature.properties.id + "<br>" + "<strong>Name:</strong> " + feature.properties.firstname + " " + feature.properties.lastname);
             }
