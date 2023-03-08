@@ -90,6 +90,7 @@
         L.geoJSON(canada, {
             onEachFeature: function (feature, layer) {
                 newid = feature.properties.id
+                console.log(newid)
                 if (newid == undefined){
                     feature.properties.id = "canId";
                     canText = canText + j.description;
