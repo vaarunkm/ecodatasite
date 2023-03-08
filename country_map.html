@@ -79,9 +79,9 @@
 
         L.geoJSON(canada, {
             onEachFeature: function (feature, layer) {
-                // layer.bindPopup(canText)
-                layer.markerID = feature.properties.id;
-                layer.bindPopup("<strong>ID:</strong> " + feature.properties.id + "<br>" + "<strong>Name:</strong> " + feature.properties.firstname + " " + feature.properties.lastname);
+                layer.bindPopup('<p id = "canID"> canText </p>')
+                // layer.markerID = feature.properties.id;
+                // layer.bindPopup("<strong>ID:</strong> " + feature.properties.id + "<br>" + "<strong>Name:</strong> " + feature.properties.firstname + " " + feature.properties.lastname);
             }
         }).addTo(map);
 
@@ -227,7 +227,7 @@
                 // the request. Otherwise, update the state to trigger a new render.
                 if (!ignoreStaleRequest) {
                     console.log(data);
-                    document.getElementById("russiaID").innerHTML = data["description"];
+                    document.getElementById("canID").innerHTML = data["description"];
                     
                     document.getElementById("id1").innerHTML = data["Datastreams@iot.navigationLink"];
                 }
