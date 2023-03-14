@@ -114,6 +114,12 @@
 //             // layer.bindPopup("<strong>ID:</strong> " + feature.properties.id + "<br>" + "<strong>Name:</strong> " + feature.properties.firstname + " " + feature.properties.lastname);
 
 //         }).addTo(map);
+        
+        L.geoJSON(canada, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup(canText)
+            }
+        }).addTo(map);
 
         L.geoJSON(uk, {
             onEachFeature: function (feature, layer) {
