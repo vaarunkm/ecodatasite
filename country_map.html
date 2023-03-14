@@ -83,34 +83,36 @@
         L.geoJSON(canada, {
             onEachFeature: function (feature, layer) {
                 
-                if (feature.properties.id == undefined){
-                    let url = "https://api.sealevelsensors.org/v1.0/Things(3)";
-                    // Declare a boolean flag that we can use to cancel the API request.
-                    let ignoreStaleRequest = false;
+                
+                let url = "https://api.v2.emissions-api.org/api/v2/methane/statistics.json?country=CAN&interval=year&begin=2021-01-01&end=2021-12-31&limit=10&offset=0
+";
+                // Declare a boolean flag that we can use to cancel the API request.
+                let ignoreStaleRequest = false;
 
-                    // Call REST API to get the post's information
-                    fetch(url, { credentials: "same-origin" })
-                        .then((response) => {
-                            if (!response.ok) throw Error(response.statusText);
-                            return response.json();
-                        })
-                        .then((data) => {
-                            // If ignoreStaleRequest was set to true, we want to ignore the results of the
-                            // the request. Otherwise, update the state to trigger a new render.
-                            if (!ignoreStaleRequest) {
-                                console.log(data);
-                                layer.bindPopup(canText + data["description"])
-                            }
-                        })
-                        .catch((error) => console.log(error));
-                        
-                        feature.properties.id = "canText";
-                    }
-                
-                
-                // layer.markerID = feature.properties.id;
-                // layer.bindPopup("<strong>ID:</strong> " + feature.properties.id + "<br>" + "<strong>Name:</strong> " + feature.properties.firstname + " " + feature.properties.lastname);
-            }
+                // Call REST API to get the post's information
+                fetch(url, { credentials: "same-origin" })
+                    .then((response) => {
+                        if (!response.ok) throw Error(response.statusText);
+                        return response.json();
+                    })
+                    .then((data) => {
+                        // If ignoreStaleRequest was set to true, we want to ignore the results of the
+                        // the request. Otherwise, update the state to trigger a new render.
+                        if (!ignoreStaleRequest) {
+                            console.log(data);
+                            var newData = "Average methane emissions are:" + data["value"]["value"];
+                            layer.bindPopup(canText + newData)
+                        }
+                    })
+                    .catch((error) => console.log(error));
+
+                    feature.properties.id = "canText";
+                }
+
+
+            // layer.markerID = feature.properties.id;
+            // layer.bindPopup("<strong>ID:</strong> " + feature.properties.id + "<br>" + "<strong>Name:</strong> " + feature.properties.firstname + " " + feature.properties.lastname);
+
         }).addTo(map);
 
         L.geoJSON(uk, {
