@@ -100,7 +100,7 @@
                         // the request. Otherwise, update the state to trigger a new render.
                         if (!ignoreStaleRequest) {
                             console.log(data);
-                            var newData = "Average methane emissions are:" + data["value"]["value"];
+                            var newData = "Average methane emissions are:" + data["value"]["average"];
                             layer.bindPopup(canText + newData)
                         }
                     })
