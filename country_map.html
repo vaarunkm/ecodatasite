@@ -131,10 +131,10 @@
                             console.log(data);
                             console.log(typeof data);
                             var parsedData = JSON.parse(data);
-                            console.log("Data"+data["value"])
-                            console.log("parsed"+parsedData["value"])
+                            console.log("Data"+data[0]["value"])
+                            console.log("parsed"+parsedData[0]["value"])
                                         
-                            var newData = "Average methane emissions are:" + parsedData["value"]["average"];
+                            var newData = "Average methane emissions are:" + parsedData[0]["value"]["average"];
                             layer.bindPopup(canText + newData)
                         }
                     })
