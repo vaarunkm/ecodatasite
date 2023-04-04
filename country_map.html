@@ -112,7 +112,7 @@
                     onEachFeature: function (feature, layer) {
 
                         let url = countryCodeList[i];
-                        getApi(url, text_var_name[i], layer);
+                        addApi(url, text_var_name[i], layer);
                         //feature.properties.id = "canText";
 
                         layer.bindPopup(text_var_name[i])
