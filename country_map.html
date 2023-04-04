@@ -112,6 +112,7 @@
                     onEachFeature: function (feature, layer) {
 
                         let url = countryCodeList[i];
+                        console.log(i,"<-id, tvn->", text_var_name[i]);
                         addApi(url, text_var_name[i], layer);
                         //feature.properties.id = "canText";
 
