@@ -74,7 +74,7 @@
     <div id="map" style="width: 1360px;height: 600px;"></div>
     <script>
         
-        function getApi(urlVar, textvariablename){
+        function getApi(urlVar, textvariablename, layer){
             let url = "https://api.v2.emissions-api.org/api/v2/methane/statistics.json?country=" + urlVar + "&interval=year&begin=2021-01-01&end=2021-12-31&limit=10&offset=0";
             fetch(url, { credentials: "same-origin" })
                 .then((response) => {
@@ -143,7 +143,7 @@
             onEachFeature: function (feature, layer) {
                 
                 let url = "CAN";
-                getApi(url, canText);
+                getApi(url, canText, layer);
                 feature.properties.id = "canText";
                 
           
