@@ -74,7 +74,7 @@
     <div id="map" style="width: 1360px;height: 600px;"></div>
     <script>
         
-        function getApi(urlVar, textvariablename, layer){
+        function addApi(urlVar, textvariablename, layer){
             let url = "https://api.v2.emissions-api.org/api/v2/methane/statistics.json?country=" + urlVar + "&interval=year&begin=2021-01-01&end=2021-12-31&limit=10&offset=0";
             fetch(url, { credentials: "same-origin" })
                 .then((response) => {
@@ -102,54 +102,38 @@
             attribute: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         }).addTo(map);
         
+        var JSON_name_list = [canada];
+        var country_code = ["CAN"];
+        var text_var_name = [canText]
         
+        function addCountries(countryList, countryCodeList, text_var_name){
+            for (let i = 0; i < countryList.length; i++) {
+                L.geoJSON(countryList[i], {
+                    onEachFeature: function (feature, layer) {
 
+                        let url = countryCodeList[i];
+                        getApi(url, text_var_name[i], layer);
+                        //feature.properties.id = "canText";
+
+                        layer.bindPopup(text_var_name[i])
+                    }
+                }).addTo(map);
+            }
+        }
+        addCountries(JSON_name_list, country_code);
+        
+        
 //         L.geoJSON(canada, {
 //             onEachFeature: function (feature, layer) {
                 
-                
-//                 let url = "https://api.v2.emissions-api.org/api/v2/methane/statistics.json?country=CAN&interval=year&begin=2021-01-01&end=2021-12-31&limit=10&offset=0
-// ";
-//                 // Declare a boolean flag that we can use to cancel the API request.
-//                 let ignoreStaleRequest = false;
-
-//                 // Call REST API to get the post's information
-//                 fetch(url, { credentials: "same-origin" })
-//                     .then((response) => {
-//                         if (!response.ok) throw Error(response.statusText);
-//                         return response.json();
-//                     })
-//                     .then((data) => {
-//                         // If ignoreStaleRequest was set to true, we want to ignore the results of the
-//                         // the request. Otherwise, update the state to trigger a new render.
-//                         if (!ignoreStaleRequest) {
-//                             console.log(data);
-//                             var newData = "Average methane emissions are:" + parsedData["value"]["average"];
-//                             layer.bindPopup(canText + newData)
-//                         }
-//                     })
-//                     .catch((error) => console.log(error));
-
-//                     feature.properties.id = "canText";
-//                 }
-
-
-//             // layer.markerID = feature.properties.id;
-//             // layer.bindPopup("<strong>ID:</strong> " + feature.properties.id + "<br>" + "<strong>Name:</strong> " + feature.properties.firstname + " " + feature.properties.lastname);
-
-//         }).addTo(map);
-        
-        L.geoJSON(canada, {
-            onEachFeature: function (feature, layer) {
-                
-                let url = "CAN";
-                getApi(url, canText, layer);
-                feature.properties.id = "canText";
+//                 let url = "CAN";
+//                 getApi(url, canText, layer);
+//                 feature.properties.id = "canText";
                 
           
-                layer.bindPopup(canText)
-            }
-        }).addTo(map);
+//                 layer.bindPopup(canText)
+//             }
+//         }).addTo(map);
 
         L.geoJSON(uk, {
             onEachFeature: function (feature, layer) {
@@ -283,22 +267,22 @@
         let ignoreStaleRequest = false;
 
         // Call REST API to get the post's information
-        fetch(url1, { credentials: "same-origin" })
-            .then((response) => {
-                if (!response.ok) throw Error(response.statusText);
-                return response.json();
-            })
-            .then((data) => {
-                // If ignoreStaleRequest was set to true, we want to ignore the results of the
-                // the request. Otherwise, update the state to trigger a new render.
-                if (!ignoreStaleRequest) {
-                    console.log(data);
-                    document.getElementById("canID").setContent() =  "hello" + canText + data["description"];
+//         fetch(url1, { credentials: "same-origin" })
+//             .then((response) => {
+//                 if (!response.ok) throw Error(response.statusText);
+//                 return response.json();
+//             })
+//             .then((data) => {
+//                 // If ignoreStaleRequest was set to true, we want to ignore the results of the
+//                 // the request. Otherwise, update the state to trigger a new render.
+//                 if (!ignoreStaleRequest) {
+//                     console.log(data);
+//                     document.getElementById("canID").setContent() =  "hello" + canText + data["description"];
                     
-                    document.getElementById("id1").innerHTML = data["Datastreams@iot.navigationLink"];
-                }
-            })
-            .catch((error) => console.log(error));
+//                     document.getElementById("id1").innerHTML = data["Datastreams@iot.navigationLink"];
+//                 }
+//             })
+//             .catch((error) => console.log(error));
     </script>
     
     <p id = "id1"><p>
